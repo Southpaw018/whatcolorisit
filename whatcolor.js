@@ -20,6 +20,4 @@ function dotime() {
     $("#h").html(hex);
     
     document.body.style.background = hex;
-    
-    setTimeout(function(){ dotime();}, 1000);
 }

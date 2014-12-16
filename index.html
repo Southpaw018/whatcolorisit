@@ -20,8 +20,10 @@
 </head>
 
 <body>
-<div id="clock">
+<div class="clock">
     <h1 id="t"></h1>
+</div>
+<div class="hex">
     <h2 id="h"></h2>
 </div>
 
@@ -29,7 +31,7 @@
 <script src="whatcolor.js"></script>
 <script>
 $(document).ready(function() {
-    dotime();
+    setInterval(dotime, 1000);
 });
 </script>
 </body>
