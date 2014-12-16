@@ -1,37 +1,22 @@
-<!DOCTYPE html><html><head><title>What colour is it?</title><meta charset="UTF-8" ><link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300' rel='stylesheet' type='text/css'>
-<link rel="shortcut icon" href="http://scn9a.org/whatcolourisit/2.png">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What colour is it?</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:800,400,300" />
+    <link rel="stylesheet" type="text/css" href="whatcolor.css" />
+    <link rel="shortcut icon" href="http://scn9a.org/whatcolourisit/2.png" />
 
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-<meta name="description" content="what colour is it?"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+    <meta name="description" content="what colour is it?" />
 
-<meta property="og:title" content="What colour is it?" />
-<meta property='og:locale' content="en_GB"/>
-<meta property='og:description' content="the time....... now in colour."/>
-<meta property="og:type" content="Website" />
-<meta property='og:site_name' content="SCN9A"/>
-<meta property="og:url" content="http://whatcolourisit.scn9a.org/" />
-<meta property="og:image" content="http://scn9a.org/whatcolourisit/1.jpg" />
-
-<style>
-
-@media all and (max-width: 1024px) {
-
-h1 { font-family:"open sans"; font-size:40px; font-weight:300; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-h2 { font-family:"open sans"; font-size:20px; font-weight:300; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-
-}
-
-@media all and (min-width: 1024px) {
-
-h1 { font-family:"open sans"; font-size:120px; font-weight:300; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-h2 { font-family:"open sans"; font-size:30px; font-weight:300; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-
-}
-
-table { position:absolute; width:100%; height:100%; top:0px; left:0px;}
-.fb-like {position:static; width:100px;}
-</style>
-
+    <meta property="og:title" content="What colour is it?" />
+    <meta property='og:locale' content="en_GB" />
+    <meta property='og:description' content="the time....... now in colour." />
+    <meta property="og:type" content="Website" />
+    <meta property='og:site_name' content="SCN9A" />
+    <meta property="og:url" content="http://whatcolourisit.scn9a.org/" />
+    <meta property="og:image" content="http://scn9a.org/whatcolourisit/1.jpg" />
 </head>
 
 <body onLoad="dotime()">
@@ -40,15 +25,10 @@ table { position:absolute; width:100%; height:100%; top:0px; left:0px;}
 <h1 id="t"></h1><br>
 <h2 id="h"></h2>
 </td></table>
-</body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-
-
-function dotime(){
-    
+function dotime() {
     $("body").css({"transition": "all 0.8s", "-webkit-transition": "all 0.8s"});
     
     var d = new Date();
@@ -73,8 +53,7 @@ function dotime(){
     
     setTimeout(function(){ dotime();}, 1000);
 }
-
 </script>
-
+</body>
 </html>
 <!-- saved from http://whatcolourisit.scn9a.org/ -->
