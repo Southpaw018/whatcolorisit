@@ -2,7 +2,9 @@ var $body = $('body');
 var $clock = $('#clock');
 var $color = $('#color');
 
-const ABS_FACTOR = 16777215 / 86400;
+const ABS_FACTOR = 16777215/86400; //Counting 0x000000 to 0xffffff, divided into 86400 equal units of ~194.18
+const HOUR_FACTOR = 255/24; //Counting 00 to FF, divided into 24 equal units of 10.625
+const MIN_SEC_FACTOR = 255/60; //Counting 00 to FF, divided into 60 equal units of 4.25
 
 var colorMode = 0; //0 = exact; 1 = subdivided; 2 = absolute
 
@@ -23,7 +25,7 @@ function calcColor(mode, time) {
             return '#' + time.hours.toString() + time.mins.toString() + time.secs.toString();
             break;
         case 1: //subdivided, hms individually scale from 0-255
-            return '#' + Math.round(time.hours * 10.625).toString(16) + Math.round(time.mins * 4.25).toString(16) + Math.round(time.secs * 4.25).toString(16);
+            return '#' + Math.round(time.hours * HOUR_FACTOR).toString(16) + Math.round(time.mins * MIN_SEC_FACTOR).toString(16) + Math.round(time.secs * MIN_SEC_FACTOR).toString(16);
             break;
         case 2: //absolute, color is based on seconds since midnight
             return '#' + Math.round(time.abs * ABS_FACTOR).toString(16);
