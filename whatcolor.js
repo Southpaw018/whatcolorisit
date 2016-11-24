@@ -25,10 +25,14 @@ function calcColor(mode, time) {
             return '#' + time.hours.toString() + time.mins.toString() + time.secs.toString();
             break;
         case 1: //subdivided, hms individually scale from 0-255
-            return '#' + Math.round(time.hours * HOUR_FACTOR).toString(16) + Math.round(time.mins * MIN_SEC_FACTOR).toString(16) + Math.round(time.secs * MIN_SEC_FACTOR).toString(16);
+            var returnHours   = Math.round(time.hours * HOUR_FACTOR).toString(16);
+            var returnMinutes = Math.round(time.mins * MIN_SEC_FACTOR).toString(16);
+            var returnSeconds = Math.round(time.secs * MIN_SEC_FACTOR).toString(16);
+            return '#' + ('00' + returnHours).substring(returnHours.length) + ('00' + returnMinutes).substring(returnMinutes.length) + ('00' + returnSeconds).substring(returnSeconds.length);
             break;
         case 2: //absolute, color is based on seconds since midnight
-            return '#' + Math.round(time.abs * ABS_FACTOR).toString(16);
+            var returnColor = Math.round(Math.floor(time.abs) * ABS_FACTOR).toString(16);
+            return '#' + ('000000' + returnColor).substring(returnColor.length);
             break;
     }
 }
