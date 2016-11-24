@@ -28,11 +28,11 @@ function calcColor(mode, time) {
             var returnHours   = Math.round(time.hours * HOUR_FACTOR).toString(16);
             var returnMinutes = Math.round(time.mins * MIN_SEC_FACTOR).toString(16);
             var returnSeconds = Math.round(time.secs * MIN_SEC_FACTOR).toString(16);
-            return '#' + ('00' + returnHours).substring(returnHours.length) + ('00' + returnMinutes).substring(returnMinutes.length) + ('00' + returnSeconds).substring(returnSeconds.length);
+            return '#' + padNumericString(returnHours, 2) + padNumericString(returnMinutes, 2) + padNumericString(returnSeconds, 2);
             break;
         case 2: //absolute, color is based on seconds since midnight
             var returnColor = Math.round(Math.floor(time.abs) * ABS_FACTOR).toString(16);
-            return '#' + ('000000' + returnColor).substring(returnColor.length);
+            return '#' + padNumericString(returnColor, 6);
             break;
     }
 }
@@ -55,4 +55,8 @@ function formatTime() {
         'secs': secs,
         'abs': secSinceMidnight
     };
+};
+
+function padNumericString(string, length) { 
+  return (length <= string.length) ? string : padNumericString("0" + string, length);
 }
